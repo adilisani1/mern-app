@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const userRouter = require('./routes/user')
 const app = express();
 const port = 5000;
+const cors = require('cors')
 
 mongoose.connect("mongodb+srv://adil:aadil%400321@cluster0.1ijveb9.mongodb.net/test")
     .then(() => console.log("DBConnection Successfull"))
@@ -10,7 +11,8 @@ mongoose.connect("mongodb+srv://adil:aadil%400321@cluster0.1ijveb9.mongodb.net/t
 
 // app.get('/', (req, res) => {
 //     res.send('Hello World!');
-// });
+// });`
+app.use(cors());
 app.use(express.json());
 app.use("/user", userRouter)
 
