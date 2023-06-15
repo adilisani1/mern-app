@@ -47,7 +47,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { email, password } = formData
-        const res = await fetch("/user/login", {
+        const res = await fetch("https://mern-stack-api-five.vercel.app/user/login", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
